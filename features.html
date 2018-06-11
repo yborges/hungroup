@@ -14,17 +14,16 @@
 
     <!-- Custom styles for "Cover" Template -->
     <link href="css/cover.css" rel="stylesheet">
-    <link href="css/features.css" rel="styleshet">
+    <link href="css/features.css" rel="stylesheet">
   </head>
 
   <body class="text-center">
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" id="body-div">
       <header class="masthead mb-auto">
         <div class="inner">
-          <h3 class="masthead-brand">ADAM &amp; AOKI</h3>
+          <h3 class="masthead-brand"><a href="index.html" >ADAM &amp; AOKI</a></h3>
           <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link" href="index.html">Home</a>
             <a class="nav-link active" href="features.html">Our Product</a>
             <a class="nav-link" href="whatsNew.html">What's New</a>
             <a class="nav-link" href="media.html">Media</a>
@@ -36,13 +35,21 @@
       </header>
 
       <main role="main" class="inner cover">
-        <img src="tshirt.png" alt="Picture of the smart t-shirt" id="imageOfSmartShirt"height="100" width="100">
-        <ul class="list-group list-group-flush featuresList" id="features-list">
-            <li class="list-group-item features-list-item">Smart fabric detects presence of dangerous UV light</li>
-            <li class="list-group-item features-list-item">The Shirt changes color and warns you when you are in danger of being sunburnt</li>
-            <li class="list-group-item features-list-item">Take into account your skin type and how long it takes to burn your skin</li>
-          </ul>
-        <a href="media.html" class="btn btn-lg btn-secondary" id="mediaLink">What the Media thinks</a>
+
+        <div class="inner" id="dangers-of-uv-div">
+
+        </div>
+
+        <button class="btn btn-light" id="control-product-features-div">Find out about our product!</button>
+        <div class="inner init-hidden" id="product-features-div">
+          <img src="tshirt.png" alt="Picture of the smart t-shirt" id="imageOfSmartShirt"height="100" width="100">
+          <ul class="list-group list-group-flush features-list" id="product-features-list">
+              <li class="list-group-item features-list-item" id="product-features-list-item-1">Smart fabric detects presence of dangerous UV light</li>
+              <li class="list-group-item features-list-item" id="product-features-list-item-2">The Shirt changes color and warns you when you are in danger of being sunburnt</li>
+              <li class="list-group-item features-list-item" id="product-features-list-item-3">Take into account your skin type and how long it takes to burn your skin</li>
+            </ul>
+          <!-- <a href="media.html" class="btn btn-lg btn-secondary" id="mediaLink">What the Media thinks</a> -->
+        </div>
       </main>
 
       <footer class="mastfoot mt-auto">
@@ -58,7 +65,12 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/about.js"></script>
+    <script src="js/features.js"></script>
 
+    <script>
+      $(document).ready(function(){
+        features.init();
+      });
+    </script>
   </body>
 </html>

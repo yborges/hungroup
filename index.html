@@ -14,16 +14,16 @@
 
     <!-- Custom styles for "Cover" Template -->
     <link href="css/cover.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
   </head>
 
   <body class="text-center">
 
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column" id="body-div">
       <header class="masthead mb-auto">
         <div class="inner">
-          <h3 class="masthead-brand">ADAM &amp; AOKI</h3>
+          <h3 class="masthead-brand"><a href="index.html">ADAM &amp; AOKI</a></h3>
           <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="index.html">Home</a>
             <a class="nav-link" href="features.html">Our Product</a>
             <a class="nav-link" href="whatsNew.html">What's New</a>
             <a class="nav-link" href="media.html">Media</a>
@@ -35,14 +35,16 @@
       </header>
 
       <main role="main" class="inner cover">
-        <h1 class="cover-heading">ADAM &amp; AOKI</h1>
-        <br>
-        <h2 class="cover-heading">Revolutionising Smart Clothing</h2>
-        <br>
-        <p class="lead">Hello. We are ADAM &amp; AOKI, a technology company dedicated to developing next generation smart clothing. We go beyond being a brand. We are a movement revolutionising the interactions between people and everyday wear. </p>
-        <p class="lead">
-          <a href="features.html" class="btn btn-lg btn-secondary">Our Product</a>
-        </p>
+        <div id="main-div">
+          <h1 class="cover-heading">ADAM &amp; AOKI</h1>
+          <br>
+          <h2 class="cover-heading">Revolutionising Smart Clothing</h2>
+          <br>
+          <p class="lead">Hello. We are ADAM &amp; AOKI, a technology company dedicated to developing next generation smart clothing. We go beyond being a brand. We are a movement revolutionising the interactions between people and everyday wear. </p>
+          <p class="lead">
+            <a href="features.html" class="btn btn-lg btn-secondary">Our Product</a>
+          </p>
+        </div>
       </main>
 
       <footer class="mastfoot mt-auto">
@@ -58,7 +60,11 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script src="js/about.js"></script>
-
+    <script src="js/index.js"></script>
+    <script>
+    $(document).ready(function(){
+      index.init();
+    });
+    </script>
   </body>
 </html>
