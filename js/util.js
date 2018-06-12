@@ -8,13 +8,13 @@ var util = {
 
     getNavbarElements: function(){
         var relevantElements = [];
-        relevantElements.push($("#ourProduct"));
-        relevantElements.push($("#whatsNew"));
-        relevantElements.push($("#media"));
-        relevantElements.push($("#aboutUs"));
-        relevantElements.push($("#social"));
-        relevantElements.push($("#contactUs"));
-        relevantElements.push($("#topPage"));
+        relevantElements.push($("#ourProductNav"));
+        relevantElements.push($("#whatsNewNav"));
+        relevantElements.push($("#mediaNav"));
+        relevantElements.push($("#aboutUsNav"));
+        relevantElements.push($("#socialNav"));
+        relevantElements.push($("#contactUsNav"));
+        relevantElements.push($("#topPageNav"));
         return relevantElements;
     },
     

@@ -118,7 +118,11 @@ body {
 #mainDiv{
     max-width: 80em;
     width: 50%;
-    margin-left: auto ;
-    margin-right: auto ;
-    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#form-div{
+    margin-left: auto;
+    margin-right: auto;
 }

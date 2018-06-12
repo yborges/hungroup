@@ -4,16 +4,39 @@ var index = {
 
     init: function(){
 
-        $(".navbar-clickable").click(function(){
-            // Whenever an element in the navbar is clicked, show the clicked element as 'active' and the others inactive
-            console.log(this);
-            util.removeActiveClassFromNavbarElements();
-            $(this).addClass('active');
+        $(".scroll-clickable").click(function(){
+            // Attaches this function to any HTML element with the class .scroll-clickable'
+            var idOfThisElement = $(this).attr('id');
+            console.log(idOfThisElement);
+
+            // Set class of clicked element as 'active' and the others inactive
+            // Applicable only to navbar elements
+            if($(this).hasClass('nav-link')){
+                util.removeActiveClassFromNavbarElements();
+                $(this).addClass('active');
+            }
+
+            // Generate idOfTargetDiv from idOfThisElement
+            var idOfTargetDiv;
+            if($(this).hasClass('nav-link')){
+                // Element is in the navbar
+                idOfTargetDiv = $(this).attr('id').substr(0, idOfThisElement.length-3);
+            }else if($(this).hasClass('btn-secondary')){
+                // Element is one of the buttons on the page
+                idOfTargetDiv = $(this).attr('id').substr(0, idOfThisElement.length-6);
+            }else if($(this).hasClass('navbar-brand')){
+                // Element is the brand-logo on the top left
+                idOfTargetDiv = "";
+            }
+
+
+            // Scroll to idOfTargetDiv
+            console.log(idOfTargetDiv);
+            $('html, body').animate({
+                scrollTop: $("#" + idOfTargetDiv).offset().top,
+            }, 1000);
         });
 
-        $("#buttonToOurProduct").click(function(){
-            util.removeActiveClassFromNavbarElements();
-            $("#ourProduct").addClass('active');
-        })
+
     },
 }
