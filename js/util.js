@@ -18,7 +18,7 @@ var util = {
         return relevantElements;
     },
     
-    removeActiveClassFromNavbarElements: function(){
+    removeActiveClassFromAllNavbarElements: function(){
         util.getNavbarElements().forEach(function(element){
             $(element).removeClass('active');
         });

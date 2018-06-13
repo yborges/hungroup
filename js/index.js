@@ -7,16 +7,24 @@ var index = {
         $(".scroll-clickable").click(function(){
             // Attaches this function to any HTML element with the class .scroll-clickable'
             var idOfThisElement = $(this).attr('id');
-            console.log(idOfThisElement);
+            // console.log(idOfThisElement);
 
-            // Set class of clicked element as 'active' and the others inactive
-            // Applicable only to navbar elements
+            // Set class of the related navbar element as 'active' and the others inactive
             if($(this).hasClass('nav-link')){
-                util.removeActiveClassFromNavbarElements();
+                // One of the elements in the navbar has been clicked
+                util.removeActiveClassFromAllNavbarElements();
                 $(this).addClass('active');
-            }
+            }else if($(this).hasClass('btn')){
+                // One of the buttons throughout the page has been clicked
+                var idOfNewActiveElement = $(this).attr('id').substr(0, idOfThisElement.length-6);
+                util.removeActiveClassFromAllNavbarElements();
+                var jqueryIdOfNewActiveElement ="#" + idOfNewActiveElement + "Nav";
+                console.log(jqueryIdOfNewActiveElement);
+                $(jqueryIdOfNewActiveElement).addClass('active');
+            };
 
             // Generate idOfTargetDiv from idOfThisElement
+            // This is where the page will auto-scroll down to
             var idOfTargetDiv;
             if($(this).hasClass('nav-link')){
                 // Element is in the navbar
@@ -26,14 +34,15 @@ var index = {
                 idOfTargetDiv = $(this).attr('id').substr(0, idOfThisElement.length-6);
             }else if($(this).hasClass('navbar-brand')){
                 // Element is the brand-logo on the top left
-                idOfTargetDiv = "";
-            }
+                idOfTargetDiv = "topPage";
+            };
 
 
-            // Scroll to idOfTargetDiv
-            console.log(idOfTargetDiv);
+            // Scroll down to idOfTargetDiv
+            // console.log(idOfTargetDiv);
+            var jQueryIdOfTargetDiv = "#" + idOfTargetDiv;
             $('html, body').animate({
-                scrollTop: $("#" + idOfTargetDiv).offset().top,
+                scrollTop: $(jQueryIdOfTargetDiv).offset().top,
             }, 1000);
         });
 
