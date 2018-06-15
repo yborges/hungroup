@@ -2,7 +2,21 @@ var index = {
     name: "index.js",
     date_created: "2018-06-11",
 
+    changeMarginTopForDivSections: function(){
+        // Computes the height of the navbar
+        // and sets the margin-top of each div-section to be the same as the navbar
+        // for propper scrolling
+        var marginTop = $("#mainNavbar").height()
+        $(".div-section").css('margin-top', marginTop);
+    },
+
     init: function(){
+
+        index.changeMarginTopForDivSections();
+        $(window).resize(function(){
+            // Atatches this function to the resize event (when window is resized)
+            index.changeMarginTopForDivSections();
+        });
 
         $(".scroll-clickable").click(function(){
             // Attaches this function to any HTML element with the class .scroll-clickable'
@@ -42,7 +56,7 @@ var index = {
             // console.log(idOfTargetDiv);
             var jQueryIdOfTargetDiv = "#" + idOfTargetDiv;
             $('html, body').animate({
-                scrollTop: $(jQueryIdOfTargetDiv).offset().top,
+                scrollTop: $(jQueryIdOfTargetDiv).offset().top - $("#mainNavbar").height(),
             }, 1000);
         });
 
