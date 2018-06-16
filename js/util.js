@@ -2,11 +2,11 @@ var util = {
     name: "util.js",
     date: "2018-06-11",
 
-    init: function(){
+    init: function () {
         // init() function
     },
 
-    getNavbarElements: function(){
+    getNavbarElements: function () {
         var relevantElements = [];
         relevantElements.push($("#ourProductNav"));
         relevantElements.push($("#whatsNewNav"));
@@ -17,9 +17,9 @@ var util = {
         relevantElements.push($("#topPageNav"));
         return relevantElements;
     },
-    
-    removeActiveClassFromAllNavbarElements: function(){
-        util.getNavbarElements().forEach(function(element){
+
+    removeActiveClassFromAllNavbarElements: function () {
+        util.getNavbarElements().forEach(function (element) {
             $(element).removeClass('active');
         });
     },

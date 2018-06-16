@@ -3,6 +3,7 @@
  */
 
 /* Links */
+
 a,
 a:focus,
 a:hover {
@@ -10,15 +11,16 @@ a:hover {
 }
 
 /* Custom default button */
+
 .btn-secondary,
 .btn-secondary:hover,
 .btn-secondary:focus {
   color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
+  text-shadow: none;
+  /* Prevent inheritance from `body` */
   background-color: #fff;
   border: .05rem solid #fff;
 }
-
 
 /*
  * Base structure
@@ -41,10 +43,10 @@ body {
   max-width: 42em;
 } */
 
-
 /*
  * Header
  */
+
 .masthead {
   margin-bottom: 2rem;
 }
@@ -62,11 +64,12 @@ body {
 }
 
 .nav-masthead .nav-link:hover,
-.nav-masthead .nav-link:focus,{
+.nav-masthead .nav-link:focus,
+  {
   border-bottom-color: rgba(255, 255, 255, .25);
 }
 
-.nav-masthead .nav-link + .nav-link {
+.nav-masthead .nav-link+.nav-link {
   margin-left: 1rem;
 }
 
@@ -84,50 +87,50 @@ body {
   }
 }
 
-
 /*
  * Cover
  */
+
 .cover {
   padding: 0 1.5rem;
 }
+
 .cover .btn-lg {
   padding: .75rem 1.25rem;
   font-weight: 700;
 }
 
-
 /*
  * Footer
  */
+
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }
 
-
-#topPage{
-    font-size: 32px;
+#topPage {
+  font-size: 32px;
 }
 
-.h-100{
-    height: 100% !important;
-    max-width: 60em;
+.h-100 {
+  height: 100% !important;
+  max-width: 60em;
 }
 
-#mainDiv{
-    max-width: 80em;
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 320px;
+#mainDiv {
+  max-width: 80em;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 320px;
 }
 
-#form-div{
-    margin-left: auto;
-    margin-right: auto;
+#form-div {
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#mainNavbar{
+#mainNavbar {
   background-color: #555;
   min-width: 100%;
   position: fixed;
@@ -136,8 +139,8 @@ body {
   /* height: 100px; */
 }
 
-@media (min-width: 720px){
-  .innerNavbar{
+@media (min-width: 720px) {
+  .innerNavbar {
     min-width: 90%;
     max-width: 100%;
     width: 90%;
@@ -145,16 +148,14 @@ body {
     margin-left: 5%;
     margin-right: 5%;
   }
-
-  .navbar-div{
-    justify-content: right; 
+  .navbar-div {
+    justify-content: right;
     position: relative;
-
   }
 }
 
-@media (max-width: 719px){
-  .innerNavbar{
+@media (max-width: 719px) {
+  .innerNavbar {
     min-width: 90%;
     max-width: 100%;
     width: 90%;
@@ -164,15 +165,13 @@ body {
     margin-top: 2%; */
     margin: 2%;
   }
-
-  .navbar-div{
-    justify-content: right; 
+  .navbar-div {
+    justify-content: right;
     position: relative;
-
   }
 }
 
-.div-section{
+.div-section {
   height: auto;
   min-height: 720px;
   max-height: 150em;
