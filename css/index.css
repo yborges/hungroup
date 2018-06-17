@@ -139,11 +139,14 @@ body {
   /* height: 100px; */
 }
 
-@media (min-width: 720px) {
+.list-group-item {
+  background-color: #333;
+}
+
+@media (min-width: 800px) {
   .innerNavbar {
     min-width: 90%;
     max-width: 100%;
-    width: 90%;
     justify-content: center;
     margin-left: 5%;
     margin-right: 5%;
@@ -152,9 +155,23 @@ body {
     justify-content: right;
     position: relative;
   }
+  #mainDiv {
+    width: 60%;
+  }
+  /* #ourProduct {
+    margin-left: 15%;
+    margin-right: 15%;
+  } */
+  #imageOfSmartShirt {
+    float: left;
+  }
+  .list-group-item {
+    margin-right: auto;
+    margin-left: 10%;
+  }
 }
 
-@media (max-width: 719px) {
+@media (max-width: 800px) {
   .innerNavbar {
     min-width: 90%;
     max-width: 100%;
@@ -169,16 +186,28 @@ body {
     justify-content: right;
     position: relative;
   }
+  #mainDiv {
+    width: 100%;
+    min-width: 100%;
+    text-align: center;
+  }
+  #productDescription {
+    width: 100%;
+  }
+  .list-group-item {
+    box-sizing: content-box;
+  }
 }
 
 .div-section {
-  height: auto;
+  height: 100%;
   min-height: 720px;
   max-height: 150em;
-  min-width: 80%;
+  /* margin-left: 15%;
+  margin-right: 15%; */
 }
 
-ul {
+/* ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -200,4 +229,4 @@ li a {
 
 li a:hover {
   background-color: #111111;
-}
+} */

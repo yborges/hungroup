@@ -1,27 +1,22 @@
 var index = {
     name: "index.js",
     date_created: "2018-06-11",
+    log: false,
 
-    changeMarginTopForDivSections: function () {
-        // Computes the height of the navbar
-        // and sets the margin-top of each div-section to be the same as the navbar
-        // for propper scrolling
-        var marginTop = $("#mainNavbar").height();
-        $(".div-section").css('margin-top', marginTop);
-    },
+    idOfCurrentSection: "",
 
     init: function () {
 
-        index.changeMarginTopForDivSections();
+        util.changeMarginTopForDivSections();
         $(window).resize(function () {
             // Atatches this function to the resize event (when window is resized)
-            index.changeMarginTopForDivSections();
+            util.changeMarginTopForDivSections();
         });
 
         $(".scroll-clickable").click(function () {
             // Attaches this function to any HTML element with the class .scroll-clickable'
             var idOfThisElement = $(this).attr('id');
-            // console.log(idOfThisElement);
+            // The id of the element that was actually clicked
 
             // Set class of the related navbar element as 'active' and the others inactive
             if ($(this).hasClass('nav-link')) {
@@ -33,7 +28,6 @@ var index = {
                 var idOfNewActiveElement = $(this).attr('id').substr(0, idOfThisElement.length - 6);
                 util.removeActiveClassFromAllNavbarElements();
                 var jqueryIdOfNewActiveElement = "#" + idOfNewActiveElement + "Nav";
-                console.log(jqueryIdOfNewActiveElement);
                 $(jqueryIdOfNewActiveElement).addClass('active');
             };
 
@@ -43,21 +37,22 @@ var index = {
             if ($(this).hasClass('nav-link')) {
                 // Element is in the navbar
                 idOfTargetDiv = $(this).attr('id').substr(0, idOfThisElement.length - 3);
+                if (index.log) console.log("navbar clicked: " + idOfTargetDiv)
             } else if ($(this).hasClass('btn-secondary')) {
                 // Element is one of the buttons on the page
                 idOfTargetDiv = $(this).attr('id').substr(0, idOfThisElement.length - 6);
+                if (index.log) console.log("button clicked: " + idOfTargetDiv)
             } else if ($(this).hasClass('navbar-brand')) {
                 // Element is the brand-logo on the top left
                 idOfTargetDiv = "topPage";
+                if (index.log) console.log("navbar brand clicked: " + idOfTargetDiv)
             };
 
 
             // Scroll down to idOfTargetDiv
             // console.log(idOfTargetDiv);
-            var jQueryIdOfTargetDiv = "#" + idOfTargetDiv;
-            $('html, body').animate({
-                scrollTop: $(jQueryIdOfTargetDiv).offset().top - $("#mainNavbar").height(),
-            }, 1000);
+            index.idOfCurrentSection = "#" + idOfTargetDiv;
+            util.scrollTo(index.idOfCurrentSection);
         });
 
 
