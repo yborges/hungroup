@@ -7,6 +7,12 @@ var index = {
 
     init: function () {
 
+        $("#sendMessageButton").click(function () {
+            // Attaches this function to when the #sendMessageButton element is clicked
+            // Signifies that the user's message written in the 'Contact Us' form is being sent
+            alert("Your message has been delivered!\nExpect a reply within 3 days!");
+        });
+
         util.changeMarginTopForDivSections();
         $(window).resize(function () {
             // Atatches this function to the resize event (when window is resized)
