@@ -118,11 +118,10 @@ body {
 }
 
 #mainDiv {
-  max-width: 80em;
-  width: 50%;
+  /* min-width: 320px;
+  max-width: 80em; */
   margin-left: auto;
   margin-right: auto;
-  min-width: 320px;
 }
 
 #form-div {
@@ -140,13 +139,13 @@ body {
 }
 
 .list-group-item {
-  background-color: #333;
+  background-color: orange;
 }
 
 @media (min-width: 800px) {
   .innerNavbar {
-    min-width: 90%;
-    max-width: 100%;
+    /* min-width: 75%; */
+    /* max-width: 100%; */
     justify-content: center;
     margin-left: 5%;
     margin-right: 5%;
@@ -156,7 +155,8 @@ body {
     position: relative;
   }
   #mainDiv {
-    width: 60%;
+    width: 100%;
+    min-width: 100%;
   }
   /* #ourProduct {
     margin-left: 15%;
@@ -166,7 +166,6 @@ body {
     float: left;
   }
   .list-group-item {
-    margin-right: auto;
     margin-left: 10%;
   }
 }
@@ -203,30 +202,4 @@ body {
   height: 100%;
   min-height: 720px;
   max-height: 150em;
-  /* margin-left: 15%;
-  margin-right: 15%; */
 }
-
-/* ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #fff;
-}
-
-li {
-  display: inline;
-}
-
-li a {
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 6px;
-  text-decoration: none;
-}
-
-li a:hover {
-  background-color: #111111;
-} */
