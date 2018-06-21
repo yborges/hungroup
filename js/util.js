@@ -20,7 +20,7 @@ var util = {
 
     removeActiveClassFromAllNavbarElements: function () {
         util.getNavbarElements().forEach(function (element) {
-            $(element).removeClass('active');
+            $(element).removeClass("active");
         });
     },
 
@@ -29,12 +29,12 @@ var util = {
         // and sets the margin-top of each div-section to be the same as the navbar
         // for propper scrolling
         var marginTop = $("#mainNavbar").height();
-        // $(".div-section").css('margin-top', marginTop);
-        $(".div-section").css('padding-top', marginTop);
+        // $(".div-section").css("margin-top", marginTop);
+        $(".div-section").css("padding-top", marginTop);
     },
 
     scrollTo: function (target) {
-        $('html, body').animate({
+        $("html, body").animate({
             // scrollTop: $(target).offset().top - $("#mainNavbar").height(),
             scrollTop: $(target).offset().top,
         }, 1000);
@@ -42,5 +42,7 @@ var util = {
 
     playDemo: function () {
 
-    }
+    },
+
+
 }
