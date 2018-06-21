@@ -3,10 +3,11 @@ var index = {
     date_created: "2018-06-11",
     log: false,
 
-    idOfCurrentSection: "",
+    idOfCurrentSection: "#topPage",
+    // Initial Section
 
     init: function () {
-
+        $("#topPage").fadeIn();
         $("#sendMessageButton").click(function () {
             // Attaches this function to when the #sendMessageButton element is clicked
             // Signifies that the user"s message written in the "Contact Us" form is being sent
@@ -14,6 +15,7 @@ var index = {
         });
 
         util.changeMarginTopForDivSections();
+        // On $(window).ready()
         $(window).resize(function () {
             // Atatches this function to the resize event (when window is resized)
             util.changeMarginTopForDivSections();
@@ -58,8 +60,10 @@ var index = {
 
             // Scroll down to idOfTargetDiv
             // console.log(idOfTargetDiv);
-            index.idOfCurrentSection = "#" + idOfTargetDiv;
-            util.scrollTo(index.idOfCurrentSection);
+            var currentSection = "#" + idOfTargetDiv;
+            var previousSection = index.idOfCurrentSection;
+            util.scrollTo(currentSection, previousSection);
+            index.idOfCurrentSection = currentSection;
         });
 
         $("#showMoreWhatsNew").click(function () {

@@ -33,16 +33,16 @@ var util = {
         $(".div-section").css("padding-top", marginTop);
     },
 
-    scrollTo: function (target) {
-        $("html, body").animate({
-            // scrollTop: $(target).offset().top - $("#mainNavbar").height(),
-            scrollTop: $(target).offset().top,
-        }, 1000);
+    scrollTo: function (target, previous) {
+        // $("html, body").animate({
+        //     // scrollTop: $(target).offset().top - $("#mainNavbar").height(),
+        //     scrollTop: $(target).offset().top,
+        // }, 1000);
+        $(previous).fadeOut(0);
+        $(target).fadeIn(500);
     },
 
     playDemo: function () {
 
-    },
-
-
+    }
 }
