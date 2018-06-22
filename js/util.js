@@ -55,7 +55,7 @@ var util = {
 
 
     scrollClickable: function (clickedElement) {
-        var idOfThisElement = $(clickedElement).attr("id");
+        var idOfClickedElement = $(clickedElement).attr("id");
         // The id of the element that was actually clicked
 
         // Set class of the related navbar element as "active" and the others inactive
@@ -65,7 +65,7 @@ var util = {
             $(clickedElement).addClass("active");
         } else if ($(clickedElement).hasClass("btn")) {
             // One of the buttons throughout the page has been clicked
-            var idOfNewActiveElement = $(clickedElement).attr("id").substr(0, idOfThisElement.length - 6);
+            var idOfNewActiveElement = $(clickedElement).attr("id").substr(0, idOfClickedElement.length - 6);
             util.removeActiveClassFromAllNavbarElements();
             var jqueryIdOfNewActiveElement = "#" + idOfNewActiveElement + "Nav";
             $(jqueryIdOfNewActiveElement).addClass("active");
@@ -73,20 +73,17 @@ var util = {
 
 
         var idOfTargetDiv;
-        // Generate idOfTargetDiv from idOfThisElement
+        // Generate idOfTargetDiv from idOfClickedElement
         // This is where the page will fade to
         if ($(clickedElement).hasClass("nav-link")) {
             // Element is in the navbar
-            idOfTargetDiv = $(clickedElement).attr("id").substr(0, idOfThisElement.length - 3);
-            if (index.log) console.log("navbar clicked: " + idOfTargetDiv)
+            idOfTargetDiv = $(clickedElement).attr("id").substr(0, idOfClickedElement.length - 3);
         } else if ($(clickedElement).hasClass("btn-secondary")) {
             // Element is one of the buttons on the page
-            idOfTargetDiv = $(clickedElement).attr("id").substr(0, idOfThisElement.length - 6);
-            if (index.log) console.log("button clicked: " + idOfTargetDiv)
+            idOfTargetDiv = $(clickedElement).attr("id").substr(0, idOfClickedElement.length - 6);
         } else if ($(clickedElement).hasClass("navbar-brand")) {
             // Element is the brand-logo on the top left
             idOfTargetDiv = "topPage";
-            if (index.log) console.log("navbar brand clicked: " + idOfTargetDiv)
         };
 
 
