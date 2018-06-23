@@ -183,6 +183,10 @@ body {
     margin-top: 2%; */
     margin: 2%;
   }
+  .div-section {
+    margin-left: 4%;
+    margin-right: 4%;
+  }
   .navbar-div {
     justify-content: right;
     position: relative;
@@ -213,4 +217,21 @@ body {
 
 .init-hidden {
   display: none;
+}
+
+a.btn {
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  color: #333;
+  text-shadow: none;
+  background-color: #fff;
+  border: 0.05rem solid #fff;
+  margin: 15px;
+}
+
+.article-image {
+  margin-left: 15px
 }

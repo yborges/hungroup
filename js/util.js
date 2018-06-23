@@ -9,13 +9,25 @@ var util = {
 
     getNavbarElements: function () {
         var relevantElements = [];
+        relevantElements.push($("#topPageNav"));
         relevantElements.push($("#ourProductNav"));
         relevantElements.push($("#whatsNewNav"));
         relevantElements.push($("#mediaNav"));
         relevantElements.push($("#aboutUsNav"));
         relevantElements.push($("#socialNav"));
         relevantElements.push($("#contactUsNav"));
-        relevantElements.push($("#topPageNav"));
+        return relevantElements;
+    },
+
+    getDivSections: function () {
+        var relevantElements = [];
+        relevantElements.push($("#topPage"));
+        relevantElements.push($("#ourProduct"));
+        relevantElements.push($("#whatsNew"));
+        relevantElements.push($("#media"));
+        relevantElements.push($("#aboutUs"));
+        relevantElements.push($("#social"));
+        relevantElements.push($("#contactUs"));
         return relevantElements;
     },
 
@@ -24,6 +36,10 @@ var util = {
         util.getNavbarElements().forEach(function (element) {
             $(element).removeClass("active");
         });
+    },
+
+    fadeOutDivSections: function () {
+        $(".div-section").fadeOut(0);
     },
 
 
@@ -36,39 +52,40 @@ var util = {
     },
 
 
+    /**
+     * @param target    The element that the webpage should scroll to
+     */
     scrollTo: function (target) {
         $("html, body").animate({
             scrollTop: $(target).offset().top,
         }, 1000);
     },
 
-
+    /**
+     * @param target    The element that should fadeIn
+     * @param previous  The element that should fadeOut
+     */
     fadeElements: function (target, previous) {
         $(previous).fadeOut(0);
-        $(target).fadeIn(500);
+        $(target).fadeIn(400);
     },
 
-
-    playDemo: function () {
-
-    },
-
-
+    /**
+     * @param clickedElement    The element that was clicked
+     */
     scrollClickable: function (clickedElement) {
         var idOfClickedElement = $(clickedElement).attr("id");
         // The id of the element that was actually clicked
 
         // Set class of the related navbar element as "active" and the others inactive
+        util.removeActiveClassFromAllNavbarElements();
         if ($(clickedElement).hasClass("nav-link")) {
             // One of the elements in the navbar has been clicked
-            util.removeActiveClassFromAllNavbarElements();
             $(clickedElement).addClass("active");
         } else if ($(clickedElement).hasClass("btn")) {
             // One of the buttons throughout the page has been clicked
             var idOfNewActiveElement = $(clickedElement).attr("id").substr(0, idOfClickedElement.length - 6);
-            util.removeActiveClassFromAllNavbarElements();
-            var jqueryIdOfNewActiveElement = "#" + idOfNewActiveElement + "Nav";
-            $(jqueryIdOfNewActiveElement).addClass("active");
+            $("#" + idOfNewActiveElement + "Nav").addClass("active");
         };
 
 
@@ -87,14 +104,11 @@ var util = {
         };
 
 
-
         // Scroll down to idOfTargetDiv
         // console.log(idOfTargetDiv);
-        console.log(idOfTargetDiv);
         var currentSection = "#" + idOfTargetDiv;
-        var previousSection = index.idOfCurrentSection;
+        var previousSection = util.getIdOfCurrentSection();
         util.fadeElements(currentSection, previousSection);
-        index.idOfCurrentSection = currentSection;
     },
 
     sendMessageButton: function () {
@@ -104,15 +118,22 @@ var util = {
 
     showMoreWhatsNewButton: function () {
         // (un)hides previous content updates
-        // console.log(($("#moreWhatsNewDiv").css("display")));
         var previousDisplayValue = $("#moreWhatsNewDiv").css("display");
         if (previousDisplayValue === "block") {
             // Will turn invisible => Show More
-            $("#showMoreWhatsNew").html("Show More");
+            $("#showMoreWhatsNew").html("Show Previous Update");
         } else if (previousDisplayValue === 'none') {
             // Will turn visibile => Show Less
-            $("#showMoreWhatsNew").html("Show Less");
+            $("#showMoreWhatsNew").html("Show Fewer Updates");
         }
         $("#moreWhatsNewDiv").fadeToggle();
+    },
+
+    getIdOfCurrentSection: function () {
+        if (window.location.href.indexOf("#") === -1) {
+            return "#topPage";
+        } else {
+            return window.location.href.substring(window.location.href.indexOf("#"));
+        }
     }
 }
