@@ -2,11 +2,6 @@ var util = {
     name: "util.js",
     date: "2018-06-11",
 
-    init: function () {
-        // init() function
-    },
-
-
     getNavbarElements: function () {
         var relevantElements = [];
         relevantElements.push($("#topPageNav"));
@@ -134,6 +129,6 @@ var util = {
             return "#topPage";
         } else {
             return window.location.href.substring(window.location.href.indexOf("#"));
-        }
+        };
     }
 }

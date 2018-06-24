@@ -1,3 +1,7 @@
+// By putting all JavaScript Functions inside a variable, 
+// We ensure that function is called until the website is fully loaded
+// That is, until the index and util variables are fully loaded into memory
+
 var index = {
     name: "index.js",
     date_created: "2018-06-11",
@@ -11,8 +15,6 @@ var index = {
         $(currentDiv + "Nav").addClass('active');
 
         index.attachFunctions();
-
-
     },
 
     attachFunctions() {
@@ -36,13 +38,10 @@ var index = {
             // Attaches this functio to the #showMoreWhatsNew element
             util.showMoreWhatsNewButton();
         });
-        // https://www.scribd.com/doc/28162549/UV-Light-The-Dangers-and-Benefits
-        $("#dangersOfUVButton").click(function () {
-
-        })
     }
 }
 
 $(document).ready(function () {
     index.init();
+    // Will not execute until everything is loaded
 });
