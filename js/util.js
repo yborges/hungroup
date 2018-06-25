@@ -106,7 +106,7 @@ var util = {
         util.fadeElements(currentSection, previousSection);
     },
 
-    sendMessageButton: function () {
+    sendMessage: function () {
         // Signals to the user that his/her message, written in the "Contact Us" form, has been sent
         alert("Your message has been delivered!\nExpect a reply within 3 days!");
     },
